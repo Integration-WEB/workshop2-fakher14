@@ -1,0 +1,41 @@
+@import"mixin.scss";
+
+.text{
+    color:red;
+    font-size: 20px;
+}
+textarea,h1{
+@extend .text;
+}
+.btn{
+@include bor;
+
+}
+@function setcolor($color){
+@if ($color == white)
+{ @return #0000;
+
+}
+@else{
+    @return #ffff;
+}
+
+}
+body{
+    background-color: #ffff;
+    
+}
+.h1{
+    color:setcolor(#ffff);
+}
+$langages:"react","spring","python";
+
+@function First ($list){
+   @return nth($list,1);
+}
+@function Last ($list){
+    @return nth($list,-1);
+ }
+ .text{
+     content:First($langages);
+ }
